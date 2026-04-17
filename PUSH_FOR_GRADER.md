@@ -4,7 +4,15 @@ Your code already lives on **`stayhealthy`**. Some Coursera checks require **dif
 
 ## 1) `med_appt` (many `.jsx` / `index.html` URL questions)
 
-On GitHub: create an **empty public** repo named **`med_appt`**.
+On GitHub: create an **empty public** repo named **`med_appt`** (no README, no .gitignore wizard files).
+
+Windows (PowerShell), from this folder after creating the repo on GitHub:
+
+```powershell
+.\push-grader-repos.ps1
+```
+
+Or manually:
 
 ```bash
 cd stayhealthy

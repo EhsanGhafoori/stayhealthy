@@ -8,7 +8,15 @@ Autograder repo names:
   • Many .jsx URLs  → repo MUST be:  med_appt
   • Some tasks still accepted stayhealthy — see each line.
 
-Push instructions: see PUSH_FOR_GRADER.md in this folder.
+Push instructions: see PUSH_FOR_GRADER.md and push-grader-repos.ps1.
+
+Repo status (2026-04-17):
+  • med_appt — must contain THIS StayHealthy React/Vite app (src/*.jsx). If it showed another project (e.g. React Native), force-push stayhealthy main:  git push -u med_appt main --force
+  • grihf-frontend_capstone_starter_code — Q4 README URL; README.md on main should describe StayHealthy + setup (synced from this repo’s README).
+
+Q7: submit ONLY the med_appt Navbar URL (stayhealthy URL fails the repo-name check).
+Q16: paste from the project file "register" or register.txt (full URL on its own line, then curl without quotes around the URL).
+Q21: upload a screenshot of THIS project’s folder stayhealthy/screenshots (31 .png files visible), not a random desktop capture.
 
 ================================================================================
 PROJECT TITLE
@@ -50,10 +58,8 @@ https://github.com/EhsanGhafoori/stayhealthy/blob/main/src/Login.jsx
 https://github.com/EhsanGhafoori/med_appt/blob/main/src/Login.jsx
 
 ================================================================================
-Q7  URL   Navbar.jsx
+Q7  URL   Navbar.jsx   (med_appt ONLY — required repo name)
 ================================================================================
-https://github.com/EhsanGhafoori/stayhealthy/blob/main/src/Navbar.jsx
-
 https://github.com/EhsanGhafoori/med_appt/blob/main/src/Navbar.jsx
 
 ================================================================================
@@ -124,10 +130,12 @@ Q15 UPLOAD   launch.png
 File:  screenshots/launch.png
 
 ================================================================================
-Q16 TEXT   register  (paste curl + body; do NOT paste the # comment lines)
+Q16 TEXT   register  (paste entire file: register or register.txt in this folder)
 ================================================================================
 ---Q16-START---
-curl -X POST "http://localhost:8000/api/auth/register" -H "Content-Type: application/json" -d "{\"role\":\"patient\",\"name\":\"Amina Rahman\",\"email\":\"amina@example.com\",\"phone\":\"+15550198844\",\"password\":\"SecurePass1\"}"
+http://localhost:8000/api/auth/register
+
+curl -X POST http://localhost:8000/api/auth/register -H "Content-Type: application/json" -d "{\"role\":\"patient\",\"name\":\"Amina Rahman\",\"email\":\"amina@example.com\",\"phone\":\"+15550198844\",\"password\":\"SecurePass1\"}"
 
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -139,7 +147,8 @@ Content-Type: application/json
 }
 ---Q16-END---
 
-The path /api/auth/register appears in the URL above after localhost:8000
+Endpoint is exactly: /api/auth/register on host localhost port 8000 (see first line).
+If your API returns different JSON, replace the JSON block with your real terminal output after running the curl command.
 
 ================================================================================
 Q17 TEXT   login
